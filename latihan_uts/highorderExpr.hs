@@ -17,3 +17,5 @@ foldEvaluate combine f (e1 :+ e2) = combine (foldEvaluate combine f e1) (foldEva
 foldEvaluate combine f (e1 :- e2) = combine (foldEvaluate combine f e1) (foldEvaluate combine f e2)
 foldEvaluate combine f (e1 :* e2) = combine (foldEvaluate combine f e1) (foldEvaluate combine f e2)
 foldEvaluate combine f (e1 :/ e2) = combine (foldEvaluate combine f e1) (foldEvaluate combine f e2)
+
+-- pusing bikin fold evaluate

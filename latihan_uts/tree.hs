@@ -11,8 +11,9 @@ foldTree combine leafFn (Branch t1 t2) = combine (foldTree combine leafFn t1) (f
 treeHeight::Tree a -> Int
 treeHeight (Leaf _) = 0
 treeHeight (Branch t1 t2) = 1 + max (treeHeight t1) (treeHeight t2)
-
+-- ketinggian sekarang ditambah max dari kiri dan kanan tree
 treeSize::Tree a -> Int
 treeSize (Leaf _) = 0
 treeSize (Branch t1 t2) = (1 + treeSize t1) + (1 + treeSize t2)
+-- hitung jumlah node tree 1 + kiri dan 1 + kanan
 
