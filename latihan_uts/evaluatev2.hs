@@ -24,4 +24,8 @@ evaluate (e1 :/ e2) = evaluate e1 / evaluate e2
 evaluate (Let v e0 e1) = evaluate (subst v e0 e1)
 evaluate (V v) = 0.0   
 
+
+foldll f z [] = z
+foldll f z (x:xs) = foldll f z xs `f` x
+
 e1 = (C 10 :+ (C 8 :/ C 2)) :* (C 7 :- C 5)
