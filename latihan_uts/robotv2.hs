@@ -17,10 +17,11 @@ turnRight = updateState (\s -> do (energy) <- get
                           else s {facing = facing s}) 
 
 moven :: Int -> Robot ()
-moven n = mapM_ (const move) [1..n]
+moven n = mapM_ (const move) [1..n]  -- if else energy > 0 
 
-spiral n = forLoop [1..n] doSpiral
+spiral n = forLoop [1..n] doSpiral  
     where doSpiral = \x -> (turnRight >> moven x >> turnRight >> moven x)
-
+-- kasih nilai sebanyak n untuk melakukan iterasi sebanyak n kali
 zigzag n v = forLoop [1..n] doZigZag
     where doZigZag = \x -> (moven v >> turnLeft >> moven 1 >> turnLeft >> moven v >> turnRight >> moven 1 >> turnRight)
+-- kasih nilai n dan v masing-masing untuk lakukan zigzag sebanyak n kali dan maju sebanyak v kali
