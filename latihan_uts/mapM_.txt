@@ -1,0 +1,2 @@
+mapM_ : map function a-> m b di list dan tidak mereturn apa-apa ( m() ) (void)
+mapM : map function a-> m b di list dan isi hasilnya ke m[b] (return list)
