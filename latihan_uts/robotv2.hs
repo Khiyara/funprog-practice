@@ -18,3 +18,9 @@ turnRight = updateState (\s -> do (energy) <- get
 
 moven :: Int -> Robot ()
 moven n = mapM_ (const move) [1..n]
+
+spiral n = forLoop [1..n] doSpiral
+    where doSpiral = \x -> (turnRight >> moven x >> turnRight >> moven x)
+
+zigzag n v = forLoop [1..n] doZigZag
+    where doZigZag = \x -> (moven v >> turnLeft >> moven 1 >> turnLeft >> moven v >> turnRight >> moven 1 >> turnRight)
